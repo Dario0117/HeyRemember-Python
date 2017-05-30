@@ -6,8 +6,8 @@ from time import sleep
 
 DB_PATH = 'persistence/recordatorios.db'
 ICON = ''
-NOTIFICATION_DURATION = 8*60*60 # 8 hours
-NOTIFICATION_INTERVAL = 10*60 # 10 minutes
+NOTIFICATION_DURATION = 5*60 # 5 minutes
+NOTIFICATION_INTERVAL = 20*60 # 20 minutes
 PROCESS_LIST = [
 	"League of Legends.exe",
 	"csgo.exe"
@@ -18,18 +18,20 @@ def main():
 	#Create the connection object
 	con = sqlite3.connect(DB_PATH)
 	cursor = con.cursor()
-
-	#Get the max number of memories
-	memories_count = getMemoriesCount(con,cursor)
-	
-	# Creating an array with all the ids of the memories 
-	# and then randomly shuffling them.
-	items = [x for x in range(1,memories_count+1)]
-	random.shuffle(items)
-	print items
-	cat, title, desc = getInfo(con,cursor,items[0])
-	showNotification(cat,title,desc)
-
+	while True:
+		#Get the max number of memories
+		memories_count = getMemoriesCount(con,cursor)
+		# Creating an array with all the ids of the memories 
+		items = [x for x in range(1,memories_count+1)]
+		while len(items)>0:
+			# Check if another memory was added
+			if(getMemoriesCount(con,cursor)!=memories_count):
+				break
+			random.shuffle(items)
+			cat, title, desc = getInfo(con,cursor,items[0])
+			items = items[1:]
+			showNotification(cat,title,desc)
+			sleep(NOTIFICATION_INTERVAL)
 	con.close()
 
 def getMemoriesCount(con, cursor):
