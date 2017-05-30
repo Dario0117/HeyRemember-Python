@@ -6,8 +6,8 @@ from time import sleep
 
 DB_PATH = 'persistence/recordatorios.db'
 ICON = 'icon.ico'
-NOTIFICATION_DURATION = 5*60 # 5 minutes
-NOTIFICATION_INTERVAL = 30*60 # 20 minutes
+NOTIFICATION_DURATION = 2*60 # 2 minutes
+NOTIFICATION_INTERVAL = 30*60 # 30 minutes
 
 def main():
 	con = sqlite3.connect(DB_PATH)
