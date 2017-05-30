@@ -4,19 +4,19 @@
 
 Python script for sending notifications with messages stored in a local sqlite database.
 
-**WARNING: This system  works only on Windows10**
+**WARNING: This system works only on Windows10**
 
 ## Requirements
-They need to be installed in that order, because `pypiwin32` is used by` win10toast`
+It's required to install in this order, because `pypiwin32` is used by` win10toast`
 ```
 pip install pypiwin32
 pip install win10toast
 ```
-In case you can not install `win10toast` via pip, you can do it manually by downloading or cloning the creator's repository ([Windows 10 toast notifications](https://github.com/jithurjacob/Windows-10-Toast-Notifications)), version 0.8 of this repository at the time I downloaded it had a problem with the `requirements.txt` file, what I did to fix it was to modify `setup.py` and remove the requirements for installation, then I installed it manually with` setup.py install` and I was able to install it correctly.
+In case that you can't install `win10toast` via pip, you can do it manually by downloading or cloning the creator's repository ([Windows 10 toast notifications](https://github.com/jithurjacob/Windows-10-Toast-Notifications)), this version '0.8' of this repository at the time that I've downloaded it, it had a problem with the `requirements.txt` file, what I did to fix it was, modifying `setup.py` and remove the requirements for installation, then I installed it manually with` setup.py install` and I was able to install it correctly.
 
 ## Workflow
 
-This script what it does to general features is to take the information from a local database and display it as toast notifications.
+This script what it does to general features is, it takes the information from a local database and display it as toast notifications.
 
 ### Set up
 
@@ -42,7 +42,7 @@ Es necesario que se instalen en ese orden, debido a que `pypiwin32` es usada por
 pip install pypiwin32
 pip install win10toast
 ```
-En caso de que no se pueda instalar `win10toast` a través de pip, se puede hacer de forma manual descargando o clonando el repositorio del creador ([Windows 10 toast notifications](https://github.com/jithurjacob/Windows-10-Toast-Notifications)), la versión 0.8 de este repositorio en el momento en el que lo descargué tenía un problema con el archivo `requirements.txt`, lo que hice para solucionarlo fue modificar el `setup.py` y quitarle los requerimientos para instalación, luego la instalé manualmente con `setup.py install` y ya pude instalarlo correctamente.
+En caso de que no se pueda instalar `win10toast` a través de pip, se puede hacer de forma manual descargando o clonando el repositorio del creador ([Windows 10 toast notifications](https://github.com/jithurjacob/Windows-10-Toast-Notifications)), la versión '0.8' de este repositorio en el momento en el que lo descargué tenía un problema con el archivo `requirements.txt`, lo que hice para solucionarlo fue modificar el `setup.py` y quitarle los requerimientos para instalación, luego la instalé manualmente con `setup.py install` y ya pude instalarlo correctamente.
 
 ## Flujo de trabajo
 
