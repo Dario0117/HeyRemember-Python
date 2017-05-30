@@ -5,26 +5,17 @@ import random
 from time import sleep
 
 DB_PATH = 'persistence/recordatorios.db'
-ICON = ''
+ICON = 'icon.ico'
 NOTIFICATION_DURATION = 5*60 # 5 minutes
-NOTIFICATION_INTERVAL = 20*60 # 20 minutes
-PROCESS_LIST = [
-	"League of Legends.exe",
-	"csgo.exe"
-]
-
+NOTIFICATION_INTERVAL = 30*60 # 20 minutes
 
 def main():
-	#Create the connection object
 	con = sqlite3.connect(DB_PATH)
 	cursor = con.cursor()
 	while True:
-		#Get the max number of memories
 		memories_count = getMemoriesCount(con,cursor)
-		# Creating an array with all the ids of the memories 
 		items = [x for x in range(1,memories_count+1)]
 		while len(items)>0:
-			# Check if another memory was added
 			if(getMemoriesCount(con,cursor)!=memories_count):
 				break
 			random.shuffle(items)
@@ -55,10 +46,9 @@ def showNotification(category, title, desc):
 	toaster.show_toast(
 		category,
 		title+": "+desc,
+		icon_path=ICON,
 		duration=NOTIFICATION_DURATION
 	)
 
-
 if __name__ == '__main__':
-	#args = sys.argv[1]
 	main()
