@@ -4,7 +4,7 @@
 
 Python script for sending notifications with messages stored in a local sqlite database.
 
-**ENG: WARNING: This system  works only on Windows10**
+**WARNING: This system  works only on Windows10**
 
 ## Requirements
 They need to be installed in that order, because `pypiwin32` is used by` win10toast`
@@ -32,7 +32,7 @@ NOTIFICATION_INTERVAL = 30*60 # 20 minutes 			# Time between notification and no
 
 **Español**
 
-Python script para el envío de notificaciones con mensajes almacenados en una base de datos sqlite.
+Script en Python para el envío de notificaciones con mensajes almacenados en una base de datos sqlite.
 
 **ADVERTENCIA: Este sistema sólo funciona en Windows10**
 
